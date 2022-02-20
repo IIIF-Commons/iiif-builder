@@ -364,15 +364,15 @@ export class BaseEntityBuilder<
     this.setPartOf(partOf);
   }
 
-  setPartOf(partOf: Reference<CollectionItemSchemas>[]) {
-    if (this.isManifest(this.entity) || this.isCanvas(this.entity)) {
+  setPartOf(partOf: Reference<CollectionItemSchemas>[], isNew = true) {
+    if (this.isCollection(this.entity) || this.isManifest(this.entity) || this.isCanvas(this.entity)) {
       this.modified.add('partOf');
       this.entity.partOf = partOf;
     }
   }
 
   isPartOf(partOf: Reference<CollectionItemSchemas>) {
-    if (this.isManifest(this.entity) || this.isCanvas(this.entity)) {
+    if (this.isCollection(this.entity) || this.isManifest(this.entity) || this.isCanvas(this.entity)) {
       this.modified.add('partOf');
       this.entity.partOf = [...this.entity.partOf, partOf];
     }
@@ -442,6 +442,10 @@ export class BaseEntityBuilder<
 
   isManifest(entity: any): entity is ManifestNormalized {
     return entity.type === 'Manifest';
+  }
+
+  isCollection(entity: any): entity is CollectionNormalized {
+    return entity.type === 'Collection';
   }
 
   addLanguageProperty(name: 'label' | 'summary', value: string | string[], language = 'none') {
