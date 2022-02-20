@@ -348,10 +348,10 @@
     "@iiif/presentation-3" "^1.0.3"
     "@types/geojson" "^7946.0.8"
 
-"@iiif/parser@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@iiif/parser/-/parser-1.0.3.tgz#eb02c13d71294ea0a76305ee66a192ac75111d9b"
-  integrity sha512-uiV8wHe/MdyTVqzs1CeW36VDcmRzMxF1nphRQwxS2i8oCu9meXsPNOEEN+Fw94RYsfRr0wMu4RN+Kuth9OMNtw==
+"@iiif/parser@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@iiif/parser/-/parser-1.0.4.tgz#a524e7f6ee877dd691798fb1ac653d60f58528ce"
+  integrity sha512-WGsXk+ya9lQWoC/Zfpdd8O1PqB1aCueYXlZjtWbBxKz/8shT+F+SiQ19/jnCdyUsQAkN3fyhx7ei6HOTcLzpLA==
   dependencies:
     "@iiif/presentation-2" "^1.0.1"
     "@iiif/presentation-3" "^1.0.4"
