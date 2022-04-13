@@ -17,9 +17,9 @@
     "prepublishOnly": "tsc -p . --declaration --emitDeclarationOnly && rollup -c"
   },
   "dependencies": {
-    "@iiif/parser": "^1.0.4",
-    "@iiif/presentation-3": "^1.0.4",
-    "@iiif/vault": "^0.9.11"
+    "@iiif/parser": "1.x",
+    "@iiif/presentation-3": "1.x",
+    "@iiif/vault": "0.9.x || 1.x"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
