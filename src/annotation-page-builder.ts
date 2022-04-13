@@ -16,7 +16,9 @@ export class AnnotationPageInstanceBuilder extends BaseEntityBuilder<AnnotationP
       annotation.target = this.defaultAnnotationTarget;
     }
 
-    annotation.body = this.addEmbeddedInstance(annotation.body, 'ContentResource');
+    const body = Array.isArray(annotation.body) ? annotation.body : [annotation.body];
+
+    annotation.body = body.map((singleBody) => this.addEmbeddedInstance(singleBody, 'ContentResource'));
 
     const annotationRef = this.addEmbeddedInstance(annotation, 'Annotation');
 
