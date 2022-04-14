@@ -1,7 +1,7 @@
 import { CollectionNormalized } from '@iiif/presentation-3';
 import { IIIFBuilder } from './iiif-builder';
 import { BaseEntityBuilder } from './base-entity-builder';
-import { emptyManifest } from '@iiif/parser';
+import { emptyCollection, emptyManifest } from '@iiif/parser';
 import { ManifestInstanceBuilder } from './manifest-builder';
 
 export class CollectionInstanceBuilder extends BaseEntityBuilder<CollectionNormalized> {
@@ -15,5 +15,13 @@ export class CollectionInstanceBuilder extends BaseEntityBuilder<CollectionNorma
     this.newInstances.push(manifestInstanceBuilder);
     this.modified.add('items');
     this.entity.items = [...this.entity.items, manifestInstanceBuilder.entity];
+  }
+
+  createCollection(id: string, callback: (manifest: CollectionInstanceBuilder) => void) {
+    const collectionInstanceBuilder = new CollectionInstanceBuilder(this.builder, { ...emptyCollection, id });
+    callback(collectionInstanceBuilder);
+    this.newInstances.push(collectionInstanceBuilder);
+    this.modified.add('items');
+    this.entity.items = [...this.entity.items, collectionInstanceBuilder.entity];
   }
 }
