@@ -22,11 +22,7 @@
     "outDir": "./.build/types",
     "declaration": true,
     "emitDeclarationOnly": true,
-    "rootDir": "./src",
-    "paths": {
-      "@iiif/presentation-2": ["./node_modules/@hyperion-framework/presentation-2"],
-      "@iiif/parser": ["./node_modules/@hyperion-framework/parser"]
-    }
+    "rootDir": "./src"
   },
   "include": [
     "./src/**/*",
