@@ -1,4 +1,4 @@
-import { Annotation, AnnotationPageNormalized } from '@iiif/presentation-3';
+import { Annotation, AnnotationPageNormalized, ChoiceBody } from '@iiif/presentation-3';
 import { IIIFBuilder } from './iiif-builder';
 import { BaseEntityBuilder } from './base-entity-builder';
 
@@ -18,7 +18,17 @@ export class AnnotationPageInstanceBuilder extends BaseEntityBuilder<AnnotationP
 
     const body = Array.isArray(annotation.body) ? annotation.body : [annotation.body];
 
-    annotation.body = body.map((singleBody) => this.addEmbeddedInstance(singleBody, 'ContentResource'));
+    annotation.body = body.map((singleBody) => {
+      if (singleBody && (singleBody as ChoiceBody).type === 'Choice') {
+        const choiceBody = singleBody as ChoiceBody;
+        choiceBody.items = choiceBody.items.map((choiceItem) => {
+          return this.addEmbeddedInstance(choiceItem, 'ContentResource');
+        });
+        return this.addEmbeddedInstance(choiceBody, 'ContentResource');
+      }
+
+      return this.addEmbeddedInstance(singleBody, 'ContentResource');
+    });
 
     const annotationRef = this.addEmbeddedInstance(annotation, 'Annotation');
 
