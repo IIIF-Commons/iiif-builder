@@ -12,7 +12,7 @@ export class AnnotationPageInstanceBuilder extends BaseEntityBuilder<AnnotationP
   createAnnotation(annotation: Annotation) {
     // Extract annotation body + target as reference
 
-    if (this.defaultAnnotationTarget) {
+    if (this.defaultAnnotationTarget && !annotation.target) {
       annotation.target = this.defaultAnnotationTarget;
     }
 
