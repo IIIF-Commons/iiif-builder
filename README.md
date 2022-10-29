@@ -71,7 +71,7 @@ class BaseEntityBuilder {
 The `entity` is `NormalizedResource`. This will be stored directly in vault. You can shallow clone one of the `emptyXYZ` from the `@iiif/parser` pacakge.
 
 For example:
-```
+```ts
 import { emptyCanvas } from '@iiif/parser';
 
 const builder = new IIIFBuilder();
@@ -85,7 +85,7 @@ Each of the properties is useful for nesting these builders.
 
 ### base.modified
 This is a list of keys of modified properties. For example, if you did:
-```
+```ts
 canvas.setLabel({ en: ['...'] });
 ```
 Then the value of `canvas.modified` would be: `['label']`
@@ -142,7 +142,7 @@ editCanvas(id: string, callback: (canvas: CanvasInstanceBuilder) => void) {
 
 ### base.embeddedInstances
 This is for non-builder resources. For example, there is builder for "ContentResources" like images. So when you add a thumbnail:
-```
+```ts
 addThumbnail(resource: ContentResource) {
   this.modified.add('thumbnail');
   this.entity.thumbnail = [...this.entity.thumbnail, this.addEmbeddedInstance(resource, 'ContentResource')];
