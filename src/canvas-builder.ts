@@ -1,8 +1,9 @@
-import { emptyAnnotationPage } from '@iiif/parser';
 import { Annotation, CanvasNormalized } from '@iiif/presentation-3';
+
 import { AnnotationPageInstanceBuilder } from './annotation-page-builder';
-import { IIIFBuilder } from './iiif-builder';
 import { BaseEntityBuilder } from './base-entity-builder';
+import { IIIFBuilder } from './iiif-builder';
+import { emptyAnnotationPage } from '@iiif/parser';
 
 export class CanvasInstanceBuilder extends BaseEntityBuilder<CanvasNormalized> {
   firstAnnotationPage?: AnnotationPageInstanceBuilder;
@@ -11,7 +12,11 @@ export class CanvasInstanceBuilder extends BaseEntityBuilder<CanvasNormalized> {
     super(builder, entity);
   }
 
-  createAnnotationPage(id: string, callback: (annotationPage: AnnotationPageInstanceBuilder) => void) {
+  createAnnotationPage(
+    id: string,
+    callback: (annotationPage: AnnotationPageInstanceBuilder) => void,
+    isAnnotationsProperty = false
+  ) {
     const annotationPageBuilder = new AnnotationPageInstanceBuilder(
       this.builder,
       { ...emptyAnnotationPage, id },
@@ -19,13 +24,15 @@ export class CanvasInstanceBuilder extends BaseEntityBuilder<CanvasNormalized> {
     );
     callback(annotationPageBuilder);
     this.newInstances.push(annotationPageBuilder);
-    if (!this.firstAnnotationPage) {
+    if (!this.firstAnnotationPage && !isAnnotationsProperty) {
       this.firstAnnotationPage = annotationPageBuilder;
     }
 
-    this.modified.add('items');
-    this.entity.items = [
-      ...this.entity.items,
+    const canvasPageProperty = isAnnotationsProperty ? 'annotations' : 'items';
+
+    this.modified.add(canvasPageProperty);
+    this.entity[canvasPageProperty] = [
+      ...this.entity[canvasPageProperty],
       {
         id,
         type: 'AnnotationPage',
