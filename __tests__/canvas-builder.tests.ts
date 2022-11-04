@@ -32,19 +32,19 @@ describe('Canvas builder', () => {
     const jsonManifest = builder.toPresentation3({ id: newManifest.id, type: 'Manifest' });
 
     expect(jsonManifest).toMatchInlineSnapshot(`
-      Object {
+      {
         "@context": "http://iiif.io/api/presentation/3/context.json",
         "id": "https://iiif.io/api/cookbook/recipe/0001-mvm-image/manifest.json",
-        "items": Array [
-          Object {
+        "items": [
+          {
             "height": 1200,
             "id": "https://iiif.io/api/cookbook/recipe/0001-mvm-image/canvas/p1",
-            "items": Array [
-              Object {
+            "items": [
+              {
                 "id": "https://iiif.io/api/cookbook/recipe/0001-mvm-image/canvas/p1/annotation-page",
-                "items": Array [
-                  Object {
-                    "body": Object {
+                "items": [
+                  {
+                    "body": {
                       "format": "image/png",
                       "height": 1800,
                       "id": "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png",
@@ -64,8 +64,8 @@ describe('Canvas builder', () => {
             "width": 1800,
           },
         ],
-        "label": Object {
-          "en": Array [
+        "label": {
+          "en": [
             "Image 1",
           ],
         },
@@ -121,38 +121,38 @@ describe('Canvas builder', () => {
     );
 
     expect(builder.toPresentation3(manifest)).toMatchInlineSnapshot(`
-      Object {
+      {
         "@context": "http://iiif.io/api/presentation/3/context.json",
         "id": "https://preview.iiif.io/cookbook/3333-choice/recipe/0033-choice/manifest.json",
-        "items": Array [
-          Object {
+        "items": [
+          {
             "height": 1271,
             "id": "https://preview.iiif.io/cookbook/3333-choice/recipe/0033-choice/canvas/p1",
-            "items": Array [
-              Object {
+            "items": [
+              {
                 "id": "https://preview.iiif.io/cookbook/3333-choice/recipe/0033-choice/canvas/p1/annotation-page",
-                "items": Array [
-                  Object {
-                    "body": Object {
-                      "items": Array [
-                        Object {
+                "items": [
+                  {
+                    "body": {
+                      "items": [
+                        {
                           "format": "image/jpeg",
                           "height": 1271,
                           "id": "https://iiif.io/api/image/3.0/example/reference/421e65be2ce95439b3ad6ef1f2ab87a9-dee-natural/full/max/0/default.jpg",
-                          "label": Object {
-                            "en": Array [
+                          "label": {
+                            "en": [
                               "Natural Light",
                             ],
                           },
                           "type": "Image",
                           "width": 2000,
                         },
-                        Object {
+                        {
                           "format": "image/jpeg",
                           "height": 1271,
                           "id": "https://iiif.io/api/image/3.0/example/reference/421e65be2ce95439b3ad6ef1f2ab87a9-dee-xray/full/max/0/default.jpg",
-                          "label": Object {
-                            "en": Array [
+                          "label": {
+                            "en": [
                               "X-Ray",
                             ],
                           },
@@ -175,8 +175,8 @@ describe('Canvas builder', () => {
             "width": 2000,
           },
         ],
-        "label": Object {
-          "en": Array [
+        "label": {
+          "en": [
             "John Dee performing an experiment before Queen Elizabeth I.",
           ],
         },

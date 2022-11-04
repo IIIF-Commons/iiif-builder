@@ -17,31 +17,31 @@ describe('Collection builder', () => {
     });
 
     expect(builder.toPresentation3(collection)).toMatchInlineSnapshot(`
-      Object {
+      {
         "@context": "http://iiif.io/api/presentation/3/context.json",
         "id": "https://example.org/collection-1",
-        "items": Array [
-          Object {
+        "items": [
+          {
             "id": "httsp://example.org/collection-2",
-            "label": Object {
-              "en": Array [
+            "label": {
+              "en": [
                 "Embedded Collection 1",
               ],
             },
             "type": "Collection",
           },
-          Object {
+          {
             "id": "httsp://example.org/collection-3",
-            "label": Object {
-              "en": Array [
+            "label": {
+              "en": [
                 "Embedded Collection 2",
               ],
             },
             "type": "Collection",
           },
         ],
-        "label": Object {
-          "en": Array [
+        "label": {
+          "en": [
             "Embedded Collection 1",
           ],
         },
@@ -94,61 +94,61 @@ describe('Collection builder', () => {
     });
 
     expect(builder.toPresentation3(built)).toMatchInlineSnapshot(`
-      Object {
+      {
         "@context": "http://iiif.io/api/presentation/3/context.json",
-        "homepage": Array [
-          Object {
+        "homepage": [
+          {
             "id": "https://example.org/homepage",
           },
         ],
         "id": "https://example.org/collection-1",
-        "items": Array [
-          Object {
+        "items": [
+          {
             "id": "https://example.org/collection-2",
-            "label": Object {
-              "none": Array [
+            "label": {
+              "none": [
                 "Embedded collection 1",
               ],
             },
-            "summary": Object {
-              "none": Array [
+            "summary": {
+              "none": [
                 "Collection 2 (embedded)",
               ],
             },
-            "thumbnail": Array [
-              Object {
+            "thumbnail": [
+              {
                 "id": "http://localhost:5001/...",
               },
             ],
             "type": "Collection",
           },
-          Object {
+          {
             "id": "https://example.org/collection-3",
-            "label": Object {
-              "none": Array [
+            "label": {
+              "none": [
                 "Embedded collection 2",
               ],
             },
-            "summary": Object {
-              "none": Array [
+            "summary": {
+              "none": [
                 "Collection 3 (embedded)",
               ],
             },
-            "thumbnail": Array [
-              Object {
+            "thumbnail": [
+              {
                 "id": "http://localhost:5001/...",
               },
             ],
             "type": "Collection",
           },
         ],
-        "label": Object {
-          "none": Array [
+        "label": {
+          "none": [
             "Top collection",
           ],
         },
-        "summary": Object {
-          "none": Array [
+        "summary": {
+          "none": [
             "This is a summary",
           ],
         },
