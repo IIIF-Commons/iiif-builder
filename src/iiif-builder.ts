@@ -1,10 +1,11 @@
+import { CollectionNormalized, ManifestNormalized, Reference } from '@iiif/presentation-3';
 import { emptyCollection, emptyManifest } from '@iiif/parser';
 import { entityActions, mappingActions } from '@iiif/vault/actions';
-import { Reference, ManifestNormalized, CollectionNormalized } from '@iiif/presentation-3';
-import { Vault } from '@iiif/vault';
+
 import { BaseEntityBuilder } from './base-entity-builder';
-import { ManifestInstanceBuilder } from './manifest-builder';
 import { CollectionInstanceBuilder } from './collection-builder';
+import { ManifestInstanceBuilder } from './manifest-builder';
+import { Vault } from '@iiif/vault';
 
 export class IIIFBuilder {
   vault: Vault;
@@ -89,6 +90,7 @@ export class IIIFBuilder {
   }
 
   createManifest(id: string, callback: (manifest: ManifestInstanceBuilder) => void) {
+    console.log('Hello');
     const entityBuilder = new ManifestInstanceBuilder(this, { ...emptyManifest, id });
 
     callback(entityBuilder);

@@ -14,7 +14,8 @@
   },
   "scripts": {
     "build": "tsc -p . --declaration --emitDeclarationOnly && rollup -c",
-    "prepublishOnly": "tsc -p . --declaration --emitDeclarationOnly && rollup -c"
+    "prepublishOnly": "tsc -p . --declaration --emitDeclarationOnly && rollup -c",
+    "test": "jest"
   },
   "dependencies": {
     "@iiif/parser": "1.x",
