@@ -11,31 +11,11 @@ export class AnnotationPageInstanceBuilder extends BaseEntityBuilder<AnnotationP
 
   createAnnotation(annotation: Annotation) {
     // Extract annotation body + target as reference
-
     if (this.defaultAnnotationTarget && !annotation.target) {
       annotation.target = this.defaultAnnotationTarget;
     }
 
     const [annotationRef] = this.importRawJson<'Annotation'>(annotation);
-
-    //
-    //
-    // const body = Array.isArray(annotation.body) ? annotation.body : [annotation.body];
-    //
-    // annotation.body = body.map((singleBody) => {
-    //   if (singleBody && (singleBody as ChoiceBody).type === 'Choice') {
-    //     const choiceBody = singleBody as ChoiceBody;
-    //     choiceBody.items = choiceBody.items.map((choiceItem) => {
-    //       return this.addEmbeddedInstance(choiceItem, 'ContentResource');
-    //     });
-    //     return this.addEmbeddedInstance(choiceBody, 'ContentResource');
-    //   }
-    //
-    //   return this.addEmbeddedInstance(singleBody, 'ContentResource');
-    // });
-    //
-    // const annotationRef = this.addEmbeddedInstance(annotation, 'Annotation');
-
     this.modified.add('items');
     this.entity.items = [...this.entity.items, annotationRef];
   }
