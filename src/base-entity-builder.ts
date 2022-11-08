@@ -10,9 +10,11 @@ import {
   CollectionItemSchemas,
   AnnotationPageNormalized,
   AnnotationPage,
+  Annotation,
 } from '@iiif/presentation-3';
 import { ServiceNormalized } from '@iiif/presentation-3/resources/service';
 import { IIIFBuilder } from './iiif-builder';
+import { normalize } from '@iiif/parser';
 
 export class BaseEntityBuilder<
   T extends ManifestNormalized | CollectionNormalized | CanvasNormalized | AnnotationPageNormalized
@@ -34,6 +36,21 @@ export class BaseEntityBuilder<
     this.embeddedInstances = [];
     this.editedInstances = [];
     this.newInstances = [];
+  }
+
+  importRawJson<Type, Resource = any>(obj: any): [Reference<Type>, Resource] {
+    const { entities, resource } = normalize(obj);
+
+    const types = Object.keys(entities);
+    for (const type of types) {
+      const objects = (entities as any)[type];
+      const ids = Object.keys(objects);
+      for (const id of ids) {
+        this.embeddedInstances.push(objects[id]);
+      }
+    }
+
+    return [{ id: resource.id, type: resource.type }, resource] as any;
   }
 
   dispose() {
