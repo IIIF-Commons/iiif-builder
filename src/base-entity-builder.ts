@@ -10,8 +10,10 @@ import {
   CollectionItemSchemas,
   AnnotationPageNormalized,
   AnnotationPage,
+  ServiceNormalized,
+  ResourceProvider,
 } from '@iiif/presentation-3';
-import { ServiceNormalized } from '@iiif/presentation-3/resources/service';
+
 import { IIIFBuilder } from './iiif-builder';
 
 export class BaseEntityBuilder<
@@ -199,6 +201,15 @@ export class BaseEntityBuilder<
   addThumbnail(resource: ContentResource) {
     this.modified.add('thumbnail');
     this.entity.thumbnail = [...this.entity.thumbnail, this.addEmbeddedInstance(resource, 'ContentResource')];
+  }
+
+  set provider(provider: ResourceProvider[]) {
+    this.addProvider(provider);
+  }
+
+  addProvider(provider: ResourceProvider[]) {
+    this.modified.add('provider');
+    this.entity.provider = [...this.entity.provider, ...provider];
   }
 
   // Technical properties
