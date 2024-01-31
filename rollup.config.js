@@ -8,8 +8,8 @@ const baseConfig = {
   },
 };
 
-const external = ['@iiif/vault', '@iiif/vault/actions'];
-const bundled = ['@iiif/parser'];
+const external = ['@iiif/helpers/vault'];
+const bundled = ['@iiif/parser', '@iiif/helpers/vault/actions'];
 const nodeExternal = [];
 
 // Roll up configs

@@ -78,6 +78,7 @@ describe('Collection builder', () => {
       collection.addSummary(summary, 'none');
       collection.setHomepage({
         id: homepage,
+        type: 'Text',
       });
       items.forEach((item) => {
         collection.createCollection(item.id, (manifest) => {
@@ -85,9 +86,11 @@ describe('Collection builder', () => {
           manifest.addSummary(item.summary, 'none');
           manifest.setHomepage({
             id: homepage,
+            type: 'Text',
           });
           manifest.addThumbnail({
             id: 'http://localhost:5001/...',
+            type: 'Image',
           });
         });
       });
@@ -99,6 +102,7 @@ describe('Collection builder', () => {
         "homepage": [
           {
             "id": "https://example.org/homepage",
+            "type": "Text",
           },
         ],
         "id": "https://example.org/collection-1",
@@ -118,6 +122,7 @@ describe('Collection builder', () => {
             "thumbnail": [
               {
                 "id": "http://localhost:5001/...",
+                "type": "Image",
               },
             ],
             "type": "Collection",
@@ -137,6 +142,7 @@ describe('Collection builder', () => {
             "thumbnail": [
               {
                 "id": "http://localhost:5001/...",
+                "type": "Image",
               },
             ],
             "type": "Collection",

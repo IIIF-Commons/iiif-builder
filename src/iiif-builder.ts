@@ -1,7 +1,8 @@
 import { emptyCollection, emptyManifest } from '@iiif/parser';
-import { entityActions, mappingActions } from '@iiif/vault/actions';
-import { Reference, ManifestNormalized, CollectionNormalized } from '@iiif/presentation-3';
-import { Vault } from '@iiif/vault';
+import { entityActions, mappingActions } from '@iiif/helpers/vault/actions';
+import { Reference } from '@iiif/presentation-3';
+import { ManifestNormalized, CollectionNormalized } from '@iiif/presentation-3-normalized';
+import { Vault } from '@iiif/helpers/vault';
 import { BaseEntityBuilder } from './base-entity-builder';
 import { ManifestInstanceBuilder } from './manifest-builder';
 import { CollectionInstanceBuilder } from './collection-builder';

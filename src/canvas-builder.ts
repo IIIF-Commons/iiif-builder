@@ -1,5 +1,5 @@
-import { Annotation, CanvasNormalized } from '@iiif/presentation-3';
-
+import { Annotation } from '@iiif/presentation-3';
+import { CanvasNormalized } from '@iiif/presentation-3-normalized';
 import { AnnotationPageInstanceBuilder } from './annotation-page-builder';
 import { BaseEntityBuilder } from './base-entity-builder';
 import { IIIFBuilder } from './iiif-builder';
