@@ -1,1 +1,1 @@
-import { IIIFBuilder } from 'iiif-builder';
+import { IIIFBuilder } from '@iiif/builder';

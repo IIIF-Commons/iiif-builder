@@ -1,4 +1,4 @@
-const { IIIFBuilder } = require('iiif-builder');
+const { IIIFBuilder } = require('@iiif/builder');
 
 const builder = new IIIFBuilder();
 const newManifest = builder.createManifest(
