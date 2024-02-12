@@ -536,10 +536,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@iiif/helpers@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@iiif/helpers/-/helpers-1.0.4.tgz#8c54fdcab5821eb1b8c0066fa31ccf093bd20456"
-  integrity sha512-TNUit742imTCBg+UJWKwRJDye+YaDwYw0Npt75jtug7eM6/Lcu+1UfRwDbvmDVezjc3UZQW4sOzQUvU8w7FDjw==
+"@iiif/helpers@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@iiif/helpers/-/helpers-1.0.5.tgz#266c1351f3a736d440d26bd4e45e644dc96e5d45"
+  integrity sha512-YaRtJdacwPXs7K+TT1Go7SMhbRS33SIEYutVJMN5bZ1z4Gx4t67nzKWrngCh7bbn+qMBfOjv2zhSssIbyvqi+g==
   dependencies:
     "@iiif/presentation-2" "1.0.4"
     "@iiif/presentation-3" "2.1.3"
@@ -550,10 +550,10 @@
     parse-svg-path "^0.1.2"
     svg-arc-to-cubic-bezier "^3.2.0"
 
-"@iiif/parser@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@iiif/parser/-/parser-2.0.1.tgz#2140adb92b5b27db3c70104b069e20bc8cbdcb84"
-  integrity sha512-RnHzBnYiI49I+cV9uxkhvUBqNSqj90pX+0hRRZgQ51EO0Sww7l1G44e6pg66PFxiDsIRXrkk34I63fYB9L1VrA==
+"@iiif/parser@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@iiif/parser/-/parser-2.0.2.tgz#0bd054429d635b197c7875cc45ad173658b7b834"
+  integrity sha512-ffqki1eJVVbWp1A+ulRgiojeCJH8eGyRIrAkyT60tHNXBWfYlkLTadFjFfyHlwWavT5BFI4nZtFTrwQXDtylQA==
   dependencies:
     "@iiif/presentation-2" "^1.0.4"
     "@iiif/presentation-3" "^2.1.3"

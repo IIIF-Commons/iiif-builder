@@ -2,16 +2,16 @@ name: Yarn build + test
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '16', '14' ]
+        node: ['18', '20']
 
     name: Node ${{ matrix.node }} build
     steps:
