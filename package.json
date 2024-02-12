@@ -27,6 +27,9 @@
     "@iiif/presentation-3-normalized": "^0.9.7",
     "@iiif/helpers": "^1.0.5"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
