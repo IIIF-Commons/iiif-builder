@@ -1,4 +1,4 @@
-import { IIIFBuilder } from 'iiif-builder';
+import { IIIFBuilder } from '@iiif/builder';
 
 const builder = new IIIFBuilder();
 const newManifest = builder.createManifest(
@@ -25,4 +25,3 @@ const newManifest = builder.createManifest(
 );
 
 console.log(JSON.stringify(builder.toPresentation3({ id: newManifest.id, type: 'Manifest' }), null, 4));
-
