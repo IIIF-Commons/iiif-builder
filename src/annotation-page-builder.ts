@@ -1,4 +1,5 @@
-import { Annotation, AnnotationPageNormalized, ChoiceBody } from '@iiif/presentation-3';
+import { Annotation } from '@iiif/presentation-3';
+import { AnnotationPageNormalized } from '@iiif/presentation-3-normalized';
 import { IIIFBuilder } from './iiif-builder';
 import { BaseEntityBuilder } from './base-entity-builder';
 

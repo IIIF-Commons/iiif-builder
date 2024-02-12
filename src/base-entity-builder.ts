@@ -1,18 +1,21 @@
 import {
-  CanvasNormalized,
-  CollectionNormalized,
   MetadataItem,
-  ManifestNormalized,
   InternationalString,
   ContentResource,
   Reference,
   ViewingDirection,
   CollectionItemSchemas,
-  AnnotationPageNormalized,
   AnnotationPage,
   Annotation,
+  SpecificResource,
 } from '@iiif/presentation-3';
-import { ServiceNormalized } from '@iiif/presentation-3/resources/service';
+import {
+  CanvasNormalized,
+  CollectionNormalized,
+  ManifestNormalized,
+  AnnotationPageNormalized,
+  ServiceNormalized,
+} from '@iiif/presentation-3-normalized';
 import { IIIFBuilder } from './iiif-builder';
 import { normalize } from '@iiif/parser';
 
@@ -396,11 +399,11 @@ export class BaseEntityBuilder<
   }
 
   // ✅  start
-  set start(start: Reference<'Canvas' | 'Selector'>) {
+  set start(start: SpecificResource<Reference<'Canvas'>> | null) {
     this.setStart(start);
   }
 
-  setStart(start: Reference<'Canvas' | 'Selector'>) {
+  setStart(start: SpecificResource<Reference<'Canvas'>> | null) {
     if (this.isManifest(this.entity)) {
       this.entity.start = start;
     }

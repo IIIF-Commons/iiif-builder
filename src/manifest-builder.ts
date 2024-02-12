@@ -1,5 +1,5 @@
 import { emptyCanvas } from '@iiif/parser';
-import { CanvasNormalized, ManifestNormalized } from '@iiif/presentation-3';
+import { CanvasNormalized, ManifestNormalized } from '@iiif/presentation-3-normalized';
 import { IIIFBuilder } from './iiif-builder';
 import { BaseEntityBuilder } from './base-entity-builder';
 import { CanvasInstanceBuilder } from './canvas-builder';

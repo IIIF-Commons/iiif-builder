@@ -1,4 +1,4 @@
-import { CollectionNormalized } from '@iiif/presentation-3';
+import { CollectionNormalized } from '@iiif/presentation-3-normalized';
 import { IIIFBuilder } from './iiif-builder';
 import { BaseEntityBuilder } from './base-entity-builder';
 import { emptyCollection, emptyManifest } from '@iiif/parser';
